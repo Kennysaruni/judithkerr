@@ -13,10 +13,10 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
     <section id="overview" className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 border-b border-[#E5E5E0]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Editorial Top Monospace Classification */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#E5E5E0]/60">
+        {/* <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#E5E5E0]/60">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] font-medium">
-              Official Dossier
+              Official Bio
             </span>
             <span className="text-[#D4D4CD]">/</span>
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8A8880]">
@@ -26,7 +26,7 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
           <div className="font-mono text-xs text-[#8A8880] tracking-wider">
             Ref: JK-2025/EXEC
           </div>
-        </div>
+        </div> */}
 
         {/* Main Editorial Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pt-12 items-start">
