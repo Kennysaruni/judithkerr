@@ -1,9 +1,10 @@
 import { type FC } from 'react';
 import { ArrowUp, Mail, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { SocialIcon } from './SocialIcons';
 
 export const Footer: FC = () => {
-  const { profile } = portfolioData;
+  const { profile, socials } = portfolioData;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -28,6 +29,23 @@ export const Footer: FC = () => {
             <p className="font-sans text-xs sm:text-sm text-[#8A8880] leading-relaxed max-w-sm">
               Advancing systemic equity, sustainable social enterprise, and community restoration across Canada and globally.
             </p>
+            {/* Social Channels */}
+            <div className="pt-2 flex items-center gap-2">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-[#57595D] mr-1">Connect</span>
+              {socials.map((social) => (
+                <a
+                  key={social.platform}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Judith Kerr on ${social.platform}`}
+                  title={`${social.platform} (${social.handle})`}
+                  className="w-8 h-8 rounded-xs border border-[#242933] bg-[#161B22] text-[#8A8880] hover:text-[#FBFBF9] hover:border-[#9B7853] hover:bg-[#9B7853]/20 flex items-center justify-center transition-all duration-200"
+                >
+                  <SocialIcon platform={social.platform} className="w-3.5 h-3.5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Col 2: Navigation Jump Links */}
@@ -111,7 +129,7 @@ export const Footer: FC = () => {
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-8 border-t border-[#242933] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#57595D]">
           <p>
-            © {new Date().getFullYear()} Judith Kerr. All rights reserved. Professional portfolio and executive record.
+            © Judith Kerr. All rights reserved. Professional portfolio and executive record.
           </p>
 
           <button

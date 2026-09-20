@@ -1,3 +1,12 @@
+export interface InitiativeImage {
+  src: string;
+  alt: string;
+  badge: string;
+  caption: string;
+  objectPosition?: string;
+  aspectRatio?: string;
+}
+
 export interface Initiative {
   number: string;
   title: string;
@@ -6,6 +15,10 @@ export interface Initiative {
   description: string;
   pillars: string[];
   impactNotes: string;
+  purpose?: string;
+  mandate?: string;
+  image?: InitiativeImage;
+  gallery?: InitiativeImage[];
 }
 
 export interface LeadershipRole {
@@ -31,6 +44,13 @@ export interface Credential {
   yearOrStatus: string;
   type: 'academic' | 'designation' | 'honor';
   note?: string;
+}
+
+export interface SocialLink {
+  platform: 'LinkedIn' | 'Instagram' | 'Facebook' | 'TikTok';
+  handle: string;
+  url: string;
+  category: string;
 }
 
 export const portfolioData = {
@@ -72,16 +92,43 @@ export const portfolioData = {
   strategicInitiatives: [
     {
       number: "01",
-      title: "Women Fe Woman Organization",
+      title: "Women FE Woman",
       role: "Founder & Executive Director",
-      focus: "International Equity, Capacity Building & Cross-Cultural Advocacy",
-      description: "An international advocacy and empowerment engine designed to build scalable support systems for women facing institutional, economic, and social disenfranchisement across the diaspora and global south.",
+      focus: "Empowerment, Self-Worth & Community Resource Development",
+      description: "Founded on the principle that the combined energy of people focusing together is far greater than individual effort, Women FE Woman empowers all women—particularly marginalized women—to recognize their intrinsic self-worth through self-knowledge individually and collectively (Together Each Achieve More). Grounded in the truth that there is more than enough for everyone, when we assist others to realize their dreams and successes, abundance naturally flows back to strengthen the entire community.\n\nOur mandate and purpose are to serve the social and economic needs of women in our communities by providing vital services, supports, and direction to help them achieve their life goals and uphold their rights. Through our commitment to strengthening community foundations, we equip members to develop and share sustainable resources for lasting empowerment.",
       pillars: [
-        "Cross-border maternal health, vocational education, and micro-grant networks",
-        "Direct community capacity building across Jamaica, Kenya, Uganda, Nigeria, and India",
-        "Policy advocacy bridging grassroots realities with institutional funding frameworks"
+        "Individual & Collective Self-Worth: Empowering marginalized women to recognize their value through self-knowledge.",
+        "Goal & Dream Realization: Providing services, supports, and direction to fulfill personal and economic life purposes.",
+        "Advocacy & Rights Protection: Promoting equitable opportunities and ensuring women's rights are upheld.",
+        "Community Foundation Building: Serving social and economic needs by developing and sharing collaborative resources."
       ],
-      impactNotes: "Established sustainable international grassroots networks fostering economic resilience and community-led governance."
+      impactNotes: "Together Each Achieve More (TEAM) — Assisting others to realize their dreams and successes naturally flows back to empower the collective.",
+      image: {
+        src: "/IMG-20260917-WA0008.jpg",
+        alt: "Women FE Woman Community School & Education Initiative",
+        badge: "Community Education Hub & Outreach",
+        caption: "Judith Kerr alongside students, educators, and community organizers at an educational hub supported by Women FE Woman.",
+        objectPosition: "center 30%",
+        aspectRatio: "aspect-[16/11]"
+      },
+      gallery: [
+        {
+          src: "/IMG-20260917-WA0008.jpg",
+          alt: "Judith Kerr with students and teachers in Women FE Woman blue shirts",
+          badge: "Judith Kerr & Student Cohort",
+          caption: "Judith Kerr alongside students, educators, and community organizers at an educational hub supported by Women FE Woman.",
+          objectPosition: "center 30%",
+          aspectRatio: "aspect-[16/11]"
+        },
+        {
+          src: "/IMG-20260917-WA0009.jpg",
+          alt: "School facility and student assembly supported by Women FE Woman",
+          badge: "Campus & Assembly Overview",
+          caption: "Assembled student body and community educational campus established through Women FE Woman foundational support.",
+          objectPosition: "center 35%",
+          aspectRatio: "aspect-[16/11]"
+        }
+      ]
     },
     {
       number: "02",
@@ -94,7 +141,15 @@ export const portfolioData = {
         "Faith-based trauma healing and family crisis counselling frameworks",
         "Community food security and emergency relief mobilization"
       ],
-      impactNotes: "Nurturing resilient global congregations and empowering local leaders to serve vulnerable populations."
+      impactNotes: "Nurturing resilient global congregations and empowering local leaders to serve vulnerable populations.",
+      image: {
+        src: "/IMG-20260917-WA0016.jpg",
+        alt: "Judith Kerr Ministries International Pastoral Assembly",
+        badge: "Pastoral Outreach & Restorative Ministry",
+        caption: "Judith Kerr ministering and delivering keynote restorative guidance at an assembled community gathering.",
+        objectPosition: "center 22%",
+        aspectRatio: "aspect-[4/5]"
+      }
     },
     {
       number: "03",
@@ -107,7 +162,15 @@ export const portfolioData = {
         "Financial literacy and micro-enterprise incubation for marginalized groups",
         "Strategic public-private social impact partnerships"
       ],
-      impactNotes: "Proven transition of non-profit programs toward recurring revenue independence and local wealth creation."
+      impactNotes: "Proven transition of non-profit programs toward recurring revenue independence and local wealth creation.",
+      image: {
+        src: "/IMG-20260917-WA0019.jpg",
+        alt: "Sustainable Social Entrepreneurship & Micro-Enterprise Review",
+        badge: "Regenerative Micro-Enterprise & Food Systems",
+        caption: "Judith Kerr on site reviewing local grain logistics, food supply distributions, and self-sustaining community micro-enterprise models.",
+        objectPosition: "center 30%",
+        aspectRatio: "aspect-[4/5]"
+      }
     }
   ] as Initiative[],
 
@@ -115,7 +178,7 @@ export const portfolioData = {
     {
       organization: "Scarborough Centre for Healthy Communities (SCHC)",
       role: "LEPP Hub Coordinator",
-      period: "June 2018 – Present",
+      period: "Current Executive Appointment",
       location: "Scarborough, ON",
       scope: "High-density community hub management & inter-agency crisis coordination",
       responsibilities: [
@@ -224,14 +287,14 @@ export const portfolioData = {
     {
       degreeOrTitle: "Black History Continues Award",
       institution: "Certificate of Recognition",
-      yearOrStatus: "2024",
+      yearOrStatus: "Conferred",
       type: "honor",
       note: "Recognized for enduring community leadership, frontline empowerment, and civic advocacy."
     },
     {
       degreeOrTitle: "Domestic Violence Christian Advocate Chaplain",
       institution: "Certified Chaplaincy Designation",
-      yearOrStatus: "2024 Designation",
+      yearOrStatus: "Certified Designation",
       type: "designation",
       note: "Certified specialized chaplaincy in intimate partner violence crisis intervention."
     }
@@ -244,5 +307,32 @@ export const portfolioData = {
     "Trauma-Informed Crisis Stabilization Protocols",
     "Keynote Speaking & Executive Pastoral Guidance",
     "Social Enterprise Design & Economic Independence"
-  ]
+  ],
+
+  socials: [
+    {
+      platform: "LinkedIn",
+      handle: "judith-kerr-64abb4332",
+      url: "https://www.linkedin.com/in/judith-kerr-64abb4332",
+      category: "Professional & Thought Leadership"
+    },
+    {
+      platform: "Instagram",
+      handle: "@judithekerr",
+      url: "https://www.instagram.com/judithekerr?utm_source=qr&stkn=cW5jaXczN3B5cjkx",
+      category: "Field Advocacy & Missions"
+    },
+    {
+      platform: "Facebook",
+      handle: "Judith Kerr",
+      url: "https://www.facebook.com/share/1FKSwRJb6g/",
+      category: "Community & Civic Outreach"
+    },
+    {
+      platform: "TikTok",
+      handle: "@judith.kerr77",
+      url: "https://tiktok.com/@judith.kerr77",
+      category: "Public Perspectives & Empowerment"
+    }
+  ] as SocialLink[]
 };

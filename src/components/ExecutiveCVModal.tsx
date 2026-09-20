@@ -36,9 +36,9 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
       role="dialog"
       aria-modal="true"
       aria-labelledby="cv-title"
-      className="cv-modal-backdrop fixed inset-0 z-50 overflow-y-auto bg-[#0E1116]/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 lg:p-8 animate-fade-in"
+      className="cv-modal-backdrop fixed inset-0 z-50 overflow-y-auto bg-[#0E1116]/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 lg:p-8 animate-in fade-in duration-200"
     >
-      <div className="cv-modal-card relative w-full max-w-4xl bg-[#FBFBF9] text-[#0E1116] border border-[#E5E5E0] shadow-2xl max-h-[92vh] flex flex-col overflow-hidden">
+      <div className="cv-modal-card relative w-full max-w-4xl bg-[#FBFBF9] text-[#0E1116] border border-[#E5E5E0] shadow-2xl max-h-[92vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
         {/* Sticky Action Toolbar (Hidden during print) */}
         <div
           data-print-hide="true"
@@ -86,17 +86,26 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
           <div className="cv-page cv-page-1 space-y-6">
             {/* Header Block */}
             <div className="border-b border-[#0E1116] pb-5 space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
-                <div>
-                  <h1 id="cv-title" className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0E1116] font-normal leading-tight print-heading-lg">
-                    Judith Kerr
-                    <span className="text-xl sm:text-2xl lg:text-3xl text-[#57595D] ml-2 font-serif italic">
-                      {profile.postNominals}
-                    </span>
-                  </h1>
-                  <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-[#9B7853] font-semibold mt-2 print-mono-xs">
-                    {profile.title}
-                  </p>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="hidden sm:block shrink-0 no-print">
+                    <img
+                      src="/IMG-20260917-WA0022.jpg"
+                      alt="Judith Kerr"
+                      className="w-16 h-20 object-cover object-[center_26%] border border-[#E5E5E0] shadow-xs"
+                    />
+                  </div>
+                  <div>
+                    <h1 id="cv-title" className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0E1116] font-normal leading-tight print-heading-lg">
+                      Judith Kerr
+                      <span className="text-xl sm:text-2xl lg:text-3xl text-[#57595D] ml-2 font-serif italic">
+                        {profile.postNominals}
+                      </span>
+                    </h1>
+                    <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-[#9B7853] font-semibold mt-2 print-mono-xs">
+                      {profile.title}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="font-mono text-xs sm:text-sm text-[#57595D] space-y-1 text-left sm:text-right print-mono-xs">
@@ -216,9 +225,11 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
                       </h3>
                       <span className="font-mono text-xs sm:text-sm text-[#9B7853] font-medium print-mono-xs">{init.role}</span>
                     </div>
-                    <p className="font-sans text-xs sm:text-sm text-[#57595D] leading-relaxed print-compact-text">
-                      {init.description}
-                    </p>
+                    <div className="font-sans text-xs sm:text-sm text-[#57595D] leading-relaxed print-compact-text space-y-1">
+                      {init.description.split('\n\n').map((para, pIdx) => (
+                        <p key={pIdx}>{para}</p>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -264,6 +275,9 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
                   </div>
                 ))}
               </div>
+              <p className="pt-1.5 text-[11px] font-sans text-[#8A8880] italic print-compact-text">
+                * Conferred numerous additional specialized certificates, executive credentials, and community honors across career.
+              </p>
             </div>
 
             {/* Strategic Advisory Scopes */}

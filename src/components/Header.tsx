@@ -1,19 +1,27 @@
 import { useState, useEffect } from 'react';
 import { ArrowUpRight, Menu, X, FileText } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+import { SocialIcon } from './SocialIcons';
 
 interface HeaderProps {
   onOpenCVModal: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
+  const { socials } = portfolioData;
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100)));
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -31,10 +39,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] py-4'
-          : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60 py-6'
+          ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] py-3.5 shadow-2xs'
+          : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60 py-5'
       }`}
     >
+      {/* Dynamic Reading Scroll Progress Bar */}
+      <div
+        className="absolute bottom-0 left-0 h-[2px] bg-[#9B7853] transition-all duration-100 ease-out pointer-events-none"
+        style={{ width: `${scrollProgress}%` }}
+      />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand / Monogram */}
         <a href="#overview" className="group flex flex-col focus:outline-none">
@@ -135,6 +148,27 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
                 <span>Initiate Dialogue</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
+            </div>
+
+            {/* Social Channels */}
+            <div className="pt-4 border-t border-[#E5E5E0]/70 flex items-center justify-between">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-[#8A8880]">
+                Connect & Follow
+              </span>
+              <div className="flex items-center gap-2">
+                {socials.map((social) => (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Judith Kerr on ${social.platform}`}
+                    className="w-8 h-8 rounded-xs border border-[#E5E5E0] bg-white text-[#57595D] hover:text-[#9B7853] hover:border-[#9B7853] flex items-center justify-center transition-colors shadow-2xs"
+                  >
+                    <SocialIcon platform={social.platform} className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

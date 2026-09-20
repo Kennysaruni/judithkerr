@@ -1,9 +1,11 @@
 import { useState, type FormEvent, type FC } from 'react';
-import { Check, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Check, Mail, Phone, MapPin, Send, Copy, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { ScrollReveal } from './ScrollReveal';
+import { SocialIcon } from './SocialIcons';
 
 export const ContactSection: FC = () => {
-  const { profile, advisoryAreas } = portfolioData;
+  const { profile, advisoryAreas, socials } = portfolioData;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,16 +18,22 @@ export const ContactSection: FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(profile.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2200);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
-    }, 750);
+    }, 800);
   };
 
   const resetForm = () => {
@@ -44,90 +52,148 @@ export const ContactSection: FC = () => {
     <section id="inquiries" className="border-b border-[#E5E5E0] bg-[#FBFBF9] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-[#E5E5E0]">
-          <div className="lg:col-span-6 space-y-2">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block">
-              Direct Access & Engagements
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#0E1116] font-normal tracking-tight">
-              Initiate Strategic Dialogue
-            </h2>
+        <ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-[#E5E5E0]">
+            <div className="lg:col-span-6 space-y-2">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block font-medium">
+                Direct Access & Engagements
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#0E1116] font-normal tracking-tight">
+                Initiate Strategic Dialogue
+              </h2>
+            </div>
+            <div className="lg:col-span-6 flex items-end">
+              <p className="font-sans text-base text-[#57595D] leading-relaxed">
+                Accepting inquiries for executive advisory roles, board governance, keynote addresses, and high-impact international humanitarian partnerships.
+              </p>
+            </div>
           </div>
-          <div className="lg:col-span-6 flex items-end">
-            <p className="font-sans text-base text-[#57595D] leading-relaxed">
-              Accepting inquiries for executive advisory roles, board governance, keynote addresses, and high-impact international humanitarian partnerships.
-            </p>
-          </div>
-        </div>
+        </ScrollReveal>
 
         {/* Split Editorial Contact Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pt-12 items-start">
           {/* Left Column: Direct Channels & Advisory Areas */}
           <div className="lg:col-span-5 space-y-10">
-            <div className="space-y-6">
-              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
-                Direct Executive Channels
-              </h3>
+            <ScrollReveal delay={100}>
+              <div className="space-y-6">
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+                  Direct Executive Channels
+                </h3>
 
-              {/* Minimal inline list without square icon boxes */}
-              <div className="space-y-4">
-                <div className="py-3 border-b border-[#E5E5E0]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
-                    Direct Email
-                  </span>
-                  <a
-                    href={`mailto:${profile.email}`}
-                    className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
-                  >
-                    <Mail className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
-                    <span>{profile.email}</span>
-                  </a>
+                <div className="space-y-4">
+                  <div className="py-3 border-b border-[#E5E5E0] group">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                      Direct Email
+                    </span>
+                    <div className="flex items-center justify-between gap-4">
+                      <a
+                        href={`mailto:${profile.email}`}
+                        className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
+                      >
+                        <Mail className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                        <span>{profile.email}</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={handleCopyEmail}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-[#8A8880] hover:text-[#0E1116] border border-[#E5E5E0] hover:border-[#9B7853] bg-white transition-all duration-200 active:scale-95 cursor-pointer"
+                        title="Copy email to clipboard"
+                      >
+                        {copiedEmail ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-600" />
+                            <span className="text-emerald-700 font-semibold">Copied</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3 text-[#9B7853]" />
+                            <span>Copy</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="py-3 border-b border-[#E5E5E0]">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                      Direct Telephone
+                    </span>
+                    <a
+                      href={`tel:${profile.phone.replace(/[^0-9]/g, '')}`}
+                      className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
+                    >
+                      <Phone className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                      <span>{profile.phone}</span>
+                    </a>
+                  </div>
+
+                  <div className="py-3 border-b border-[#E5E5E0]">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                      Headquarters & Reach
+                    </span>
+                    <div className="font-serif text-lg text-[#0E1116] flex items-center gap-3">
+                      <MapPin className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                      <span>{profile.location}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="py-3 border-b border-[#E5E5E0]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
-                    Direct Telephone
+                {/* Official Social & Public Channels */}
+                <div className="pt-6 space-y-3">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold block">
+                    Public & Social Channels
                   </span>
-                  <a
-                    href={`tel:${profile.phone.replace(/[^0-9]/g, '')}`}
-                    className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
-                  >
-                    <Phone className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
-                    <span>{profile.phone}</span>
-                  </a>
-                </div>
-
-                <div className="py-3 border-b border-[#E5E5E0]">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
-                    Headquarters & Reach
-                  </span>
-                  <div className="font-serif text-lg text-[#0E1116] flex items-center gap-3">
-                    <MapPin className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
-                    <span>{profile.location}</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {socials.map((social) => (
+                      <a
+                        key={social.platform}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-between p-3 border border-[#E5E5E0] bg-[#FBFBF9] hover:bg-white hover:border-[#9B7853] hover:shadow-xs transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span className="text-[#9B7853] group-hover:scale-110 transition-transform shrink-0">
+                            <SocialIcon platform={social.platform} className="w-4 h-4" />
+                          </span>
+                          <div className="min-w-0">
+                            <span className="font-serif text-sm font-medium text-[#0E1116] group-hover:text-[#9B7853] transition-colors block truncate">
+                              {social.platform}
+                            </span>
+                            <span className="font-mono text-[10px] text-[#8A8880] block truncate">
+                              {social.handle}
+                            </span>
+                          </div>
+                        </div>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#8A8880] group-hover:text-[#9B7853] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Advisory Focus Areas */}
-            <div className="space-y-4 pt-2">
-              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
-                Advisory Consultation Scopes
-              </h3>
-              <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-[#57595D]">
-                {advisoryAreas.map((area, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 bg-[#9B7853]"></span>
-                    <span>{area}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {/* Advisory Focus Areas */}
+              <div className="space-y-4 pt-6">
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+                  Advisory Consultation Scopes
+                </h3>
+                <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-[#57595D]">
+                  {advisoryAreas.map((area, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 bg-[#9B7853]"></span>
+                      <span>{area}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Executive Inquiry Form */}
-          <div className="lg:col-span-7 border border-[#E5E5E0] p-8 sm:p-12 bg-[#FBFBF9]">
-            {submitted ? (
+          <div className="lg:col-span-7">
+            <ScrollReveal delay={200}>
+              <div className="border border-[#E5E5E0] p-8 sm:p-12 bg-[#FBFBF9] shadow-2xs hover:border-[#9B7853]/40 transition-colors duration-500">
+                {submitted ? (
               <div className="py-12 text-center space-y-6">
                 <div className="w-12 h-12 mx-auto border border-[#9B7853] flex items-center justify-center text-[#9B7853]">
                   <Check className="w-6 h-6 stroke-[2]" />
@@ -289,6 +355,8 @@ export const ContactSection: FC = () => {
                 </button>
               </form>
             )}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
