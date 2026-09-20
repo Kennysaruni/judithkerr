@@ -37,10 +37,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full pt-[env(safe-area-inset-top,0px)] transition-[background-color,border-color,box-shadow,padding] duration-200 ${
         isScrolled
-          ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] py-3.5 shadow-2xs'
-          : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60 py-5'
+          ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] py-3 sm:py-3.5 shadow-2xs'
+          : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60 py-3 sm:py-5'
       }`}
     >
       {/* Dynamic Reading Scroll Progress Bar */}

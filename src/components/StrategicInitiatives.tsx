@@ -1,15 +1,44 @@
-import { useState, type FC } from 'react';
+import { useState, useRef, type FC } from 'react';
 import { Plus, Minus, ArrowRight, Globe, Shield, Coins } from 'lucide-react';
 import { portfolioData, type Initiative } from '../data/portfolioData';
 import { ScrollReveal } from './ScrollReveal';
 
 export const StrategicInitiatives: FC = () => {
   const { strategicInitiatives } = portfolioData;
-  const [activeInitiative, setActiveInitiative] = useState<string | null>('01');
+  const [openInitiatives, setOpenInitiatives] = useState<Record<string, boolean>>({ '01': true });
   const [galleryIndices, setGalleryIndices] = useState<Record<string, number>>({});
+  const initiativeRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const toggleInitiative = (num: string) => {
-    setActiveInitiative(activeInitiative === num ? null : num);
+    setOpenInitiatives((prev) => {
+      const willOpen = !prev[num];
+
+      if (willOpen) {
+        // When expanding an initiative, smoothly ensure its header is visible below the sticky navbar
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const el = initiativeRefs.current[num];
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              const stickyHeaderHeight = 85; // accounts for header height + margin
+              // If the header row is above the viewport or scrolled too far down
+              if (rect.top < stickyHeaderHeight || rect.top > window.innerHeight * 0.35) {
+                const targetY = window.scrollY + rect.top - stickyHeaderHeight;
+                window.scrollTo({
+                  top: Math.max(0, targetY),
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }, 50);
+        });
+      }
+
+      return {
+        ...prev,
+        [num]: willOpen
+      };
+    });
   };
 
   const getInitiativeIcon = (num: string) => {
@@ -50,12 +79,15 @@ export const StrategicInitiatives: FC = () => {
         {/* Editorial Initiatives Rows (Numbered 01, 02, 03) */}
         <div className="divide-y divide-[#E5E5E0]">
           {strategicInitiatives.map((item: Initiative, idx: number) => {
-            const isOpen = activeInitiative === item.number;
+            const isOpen = !!openInitiatives[item.number];
             const currentImg = (item.gallery && item.gallery[galleryIndices[item.number] || 0]) || item.image;
 
             return (
               <ScrollReveal key={item.number} delay={idx * 140}>
                 <div
+                  ref={(el) => {
+                    initiativeRefs.current[item.number] = el;
+                  }}
                   className={`py-10 transition-colors duration-300 ${
                     isOpen ? 'bg-[#F6F2EC]/20' : 'hover:bg-[#F6F2EC]/10'
                   }`}
