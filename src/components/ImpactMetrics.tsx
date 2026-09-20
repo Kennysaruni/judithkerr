@@ -85,7 +85,7 @@ export const ImpactMetrics: FC = () => {
 
         {/* International Field Missions Documentary Gallery */}
         <ScrollReveal delay={350}>
-          <div className="mt-10 pt-8 border-t border-[#E5E5E0] grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-10 pt-8 border-t border-[#E5E5E0] grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Mission Card 1: Uganda */}
             <div className="bg-[#F5F5F0] border border-[#E5E5E0] p-3 shadow-xs hover:border-[#9B7853]/40 transition-colors duration-500 shimmer-hover group">
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0E1116]">
@@ -109,7 +109,30 @@ export const ImpactMetrics: FC = () => {
               </div>
             </div>
 
-            {/* Mission Card 2: Kenya */}
+            {/* Mission Card 2: Community Assembly & Town Hall */}
+            <div className="bg-[#F5F5F0] border border-[#E5E5E0] p-3 shadow-xs hover:border-[#9B7853]/40 transition-colors duration-500 shimmer-hover group">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#0E1116]">
+                <img
+                  src="/IMG-20260917-WA0014.jpg"
+                  alt="Grassroots community assembly and women's town hall"
+                  className="w-full h-full object-cover object-[center_40%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-[#0E1116]/85 backdrop-blur-xs text-[#FBFBF9] px-2 py-0.5 text-[9px] font-mono uppercase tracking-widest border border-white/15">
+                  Community Town Hall • Field Mission
+                </div>
+              </div>
+              <div className="pt-3 space-y-1">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-[#9B7853] font-semibold block">
+                  Maternal & Family Wellness
+                </span>
+                <p className="font-sans text-xs text-[#57595D] leading-relaxed">
+                  Participatory community assemblies: direct dialogue with resident mothers, families, and community elders to assess local health and nutrition priorities.
+                </p>
+              </div>
+            </div>
+
+            {/* Mission Card 3: Kenya */}
             <div className="bg-[#F5F5F0] border border-[#E5E5E0] p-3 shadow-xs hover:border-[#9B7853]/40 transition-colors duration-500 shimmer-hover group">
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0E1116]">
                 <img

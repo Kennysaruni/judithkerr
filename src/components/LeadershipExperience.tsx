@@ -64,37 +64,6 @@ export const LeadershipExperience: FC = () => {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Frontline Community Operations Documentary Card */}
-                  {idx === 0 && (
-                    <div className="mt-8 pt-6 border-t border-[#E5E5E0]/60 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                      <div className="md:col-span-6 bg-[#F5F5F0] border border-[#E5E5E0] p-2.5 shadow-xs hover:border-[#9B7853]/40 transition-colors duration-500 shimmer-hover group/photo">
-                        <div className="relative aspect-[16/10] overflow-hidden bg-[#0E1116]">
-                          <img
-                            src="/IMG-20260917-WA0014.jpg"
-                            alt="Frontline Community Hub Resident Gathering & Assembly"
-                            className="w-full h-full object-cover object-[center_40%] transition-transform duration-700 ease-out group-hover/photo:scale-[1.03]"
-                            loading="lazy"
-                          />
-                          <div className="absolute top-2.5 left-2.5 bg-[#0E1116]/85 backdrop-blur-xs text-[#FBFBF9] px-2 py-0.5 text-[9px] font-mono uppercase tracking-widest border border-white/15">
-                            Frontline Hub Operations
-                          </div>
-                        </div>
-                        <p className="font-sans text-xs text-[#57595D] pt-2.5 leading-relaxed italic">
-                          Community hub gathering: facilitating direct resident engagement, trauma stabilization, and collaborative support services.
-                        </p>
-                      </div>
-
-                      <div className="md:col-span-6 space-y-3 font-sans text-xs sm:text-sm text-[#57595D]">
-                        <span className="font-mono text-[11px] uppercase tracking-wider text-[#9B7853] font-semibold block">
-                          On-the-Ground Stabilization & Resident Trust
-                        </span>
-                        <p className="leading-relaxed">
-                          Operating in high-density neighbourhood hubs requires authentic frontline presence. Facilitating community assemblies bridges inter-agency resources, harm reduction pathways, and trauma-informed support for priority populations.
-                        </p>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </ScrollReveal>
