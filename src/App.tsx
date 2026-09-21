@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { LeadershipProfile } from './components/LeadershipProfile';
 import { ImpactMetrics } from './components/ImpactMetrics';
 import { StrategicInitiatives } from './components/StrategicInitiatives';
 import { LeadershipExperience } from './components/LeadershipExperience';
@@ -24,6 +25,7 @@ export function App() {
         {/* Main Content Sections */}
         <main className="flex-grow">
           <Hero onOpenCVModal={() => setIsCVModalOpen(true)} />
+          <LeadershipProfile />
           <ImpactMetrics />
           <StrategicInitiatives />
           <LeadershipExperience />

@@ -12,26 +12,26 @@ export const Footer: FC = () => {
 
   return (
     <footer className="bg-[#0E1116] text-[#FBFBF9] border-t border-[#242933]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-12 space-y-10">
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Col 1: Identity & Credentials */}
-          <div className="lg:col-span-5 space-y-4">
-            <h3 className="font-serif text-2xl sm:text-3xl font-light tracking-tight text-[#FBFBF9]">
+          <div className="lg:col-span-5 space-y-3">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#FBFBF9]">
               Judith Kerr
-              <span className="block text-sm font-sans text-[#8A8880] mt-1 font-normal tracking-wide">
+              <span className="block text-sm font-sans text-[#B0B0A8] mt-1 font-bold tracking-wide">
                 {profile.postNominals}
               </span>
             </h3>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853]">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853] font-bold">
               {profile.title}
             </p>
-            <p className="font-sans text-xs sm:text-sm text-[#8A8880] leading-relaxed max-w-sm">
+            <p className="font-sans text-xs sm:text-sm text-[#B0B0A8] font-semibold leading-relaxed max-w-sm">
               Advancing systemic equity, sustainable social enterprise, and community restoration across Canada and globally.
             </p>
             {/* Social Channels */}
             <div className="pt-2 flex items-center gap-2">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-[#57595D] mr-1">Connect</span>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-[#B0B0A8] font-bold mr-1">Connect</span>
               {socials.map((social) => (
                 <a
                   key={social.platform}
@@ -40,7 +40,7 @@ export const Footer: FC = () => {
                   rel="noopener noreferrer"
                   aria-label={`Judith Kerr on ${social.platform}`}
                   title={`${social.platform} (${social.handle})`}
-                  className="w-8 h-8 rounded-xs border border-[#242933] bg-[#161B22] text-[#8A8880] hover:text-[#FBFBF9] hover:border-[#9B7853] hover:bg-[#9B7853]/20 flex items-center justify-center transition-all duration-200"
+                  className="w-8 h-8 rounded-xs border border-[#242933] bg-[#161B22] text-[#B0B0A8] hover:text-[#FBFBF9] hover:border-[#9B7853] hover:bg-[#9B7853]/30 flex items-center justify-center transition-all duration-200"
                 >
                   <SocialIcon platform={social.platform} className="w-3.5 h-3.5" />
                 </a>
@@ -49,14 +49,19 @@ export const Footer: FC = () => {
           </div>
 
           {/* Col 2: Navigation Jump Links */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853]">
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853] font-bold">
               Dossier Navigation
             </h4>
-            <ul className="space-y-2.5 font-sans text-xs text-[#8A8880]">
+            <ul className="space-y-2 font-sans text-xs text-[#B0B0A8] font-bold">
               <li>
                 <a href="#overview" className="hover:text-[#FBFBF9] transition-colors">
                   Overview & Statement
+                </a>
+              </li>
+              <li>
+                <a href="#profile" className="hover:text-[#FBFBF9] transition-colors">
+                  Leadership Profile & Mission
                 </a>
               </li>
               <li>
@@ -93,41 +98,41 @@ export const Footer: FC = () => {
           </div>
 
           {/* Col 3: Direct Executive Contact */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853]">
+          <div className="lg:col-span-4 space-y-3">
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#9B7853] font-bold">
               Executive Channels
             </h4>
-            <div className="space-y-3 font-mono text-xs text-[#8A8880]">
+            <div className="space-y-2.5 font-mono text-xs text-[#B0B0A8]">
               <div>
-                <span className="text-[#57595D] block text-[10px] uppercase">Email Inquiries</span>
+                <span className="text-[#8A8880] block text-[10px] uppercase font-bold">Email Inquiries</span>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="text-[#FBFBF9] hover:text-[#9B7853] transition-colors flex items-center gap-2 mt-0.5"
+                  className="text-[#FBFBF9] hover:text-[#9B7853] font-bold transition-colors flex items-center gap-2 mt-0.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#9B7853]" />
                   <span>{profile.email}</span>
                 </a>
               </div>
               <div>
-                <span className="text-[#57595D] block text-[10px] uppercase">Telephone Direct</span>
+                <span className="text-[#8A8880] block text-[10px] uppercase font-bold">Telephone Direct</span>
                 <a
                   href={`tel:${profile.phone.replace(/[^0-9]/g, '')}`}
-                  className="text-[#FBFBF9] hover:text-[#9B7853] transition-colors flex items-center gap-2 mt-0.5"
+                  className="text-[#FBFBF9] hover:text-[#9B7853] font-bold transition-colors flex items-center gap-2 mt-0.5"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#9B7853]" />
                   <span>{profile.phone}</span>
                 </a>
               </div>
               <div>
-                <span className="text-[#57595D] block text-[10px] uppercase">Location</span>
-                <span className="text-[#FBFBF9] block mt-0.5">{profile.location}</span>
+                <span className="text-[#8A8880] block text-[10px] uppercase font-bold">Location</span>
+                <span className="text-[#FBFBF9] font-bold block mt-0.5">{profile.location}</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar: Copyright & Back to Top */}
-        <div className="pt-8 border-t border-[#242933] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#57595D]">
+        <div className="pt-6 border-t border-[#242933] flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs text-[#8A8880] font-semibold">
           <p>
             © Judith Kerr. All rights reserved. Professional portfolio and executive record.
           </p>
@@ -135,7 +140,7 @@ export const Footer: FC = () => {
           <button
             type="button"
             onClick={scrollToTop}
-            className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#8A8880] hover:text-[#FBFBF9] transition-colors cursor-pointer"
+            className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#B0B0A8] font-bold hover:text-[#FBFBF9] transition-colors cursor-pointer"
           >
             <span>Back to Top</span>
             <ArrowUp className="w-3.5 h-3.5 text-[#9B7853] group-hover:-translate-y-1 transition-transform" />

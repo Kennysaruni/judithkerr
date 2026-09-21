@@ -43,12 +43,17 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-weight: 500;
+    font-weight: 600;
   }
 
-  /* Make all normal/body text across the application a bit bolder (Medium / 500) */
+  /* Make headings distinctly bold */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+
+  /* Ensure all body text, list items, and descriptions are bold */
   p, li, dd {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   ::selection {
@@ -61,14 +66,15 @@
   }
 }
 
-/* Ensure all normal secondary text across components has a bolder presence and crisp contrast */
+/* Ensure all normal secondary text across components has a strong bold presence and crisp contrast */
 .text-\[\#57595D\] {
-  color: #2D3139 !important;
-  font-weight: 500;
+  color: #1A1D20 !important;
+  font-weight: 600;
 }
 
 footer .text-\[\#57595D\] {
   color: #8A8880 !important;
+  font-weight: 600;
 }
 
 /* Custom Editorial Utilities */
@@ -86,6 +92,11 @@ footer .text-\[\#57595D\] {
 
 .font-mono {
   font-family: var(--font-mono);
+}
+
+/* Arial font for Executive Summary */
+.font-arial {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 /* Subtle Link Underline Micro-interaction */

@@ -49,21 +49,21 @@ export const ContactSection: FC = () => {
   };
 
   return (
-    <section id="inquiries" className="border-b border-[#E5E5E0] bg-[#FBFBF9] py-20 sm:py-28">
+    <section id="inquiries" className="border-b border-[#E5E5E0] bg-[#FBFBF9] py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-[#E5E5E0]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-8 border-b border-[#E5E5E0]">
             <div className="lg:col-span-6 space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block font-medium">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block font-bold">
                 Direct Access & Engagements
               </span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#0E1116] font-normal tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0E1116] font-bold tracking-tight">
                 Initiate Strategic Dialogue
               </h2>
             </div>
             <div className="lg:col-span-6 flex items-end">
-              <p className="font-sans text-base text-[#57595D] leading-relaxed">
+              <p className="font-sans text-base text-[#1A1D20] font-bold leading-relaxed">
                 Accepting inquiries for executive advisory roles, board governance, keynote addresses, and high-impact international humanitarian partnerships.
               </p>
             </div>
@@ -71,38 +71,38 @@ export const ContactSection: FC = () => {
         </ScrollReveal>
 
         {/* Split Editorial Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pt-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-8 items-start">
           {/* Left Column: Direct Channels & Advisory Areas */}
-          <div className="lg:col-span-5 space-y-10">
+          <div className="lg:col-span-5 space-y-6">
             <ScrollReveal delay={100}>
-              <div className="space-y-6">
-                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+              <div className="space-y-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold">
                   Direct Executive Channels
                 </h3>
 
-                <div className="space-y-4">
-                  <div className="py-3 border-b border-[#E5E5E0] group">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                <div className="space-y-3">
+                  <div className="py-2.5 border-b border-[#E5E5E0] group">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#9B7853] block mb-0.5 font-bold">
                       Direct Email
                     </span>
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center justify-between gap-3">
                       <a
                         href={`mailto:${profile.email}`}
-                        className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
+                        className="font-serif text-lg sm:text-xl text-[#0E1116] hover:text-[#9B7853] font-bold transition-colors flex items-center gap-2.5"
                       >
-                        <Mail className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                        <Mail className="w-4 h-4 text-[#9B7853] stroke-[2]" />
                         <span>{profile.email}</span>
                       </a>
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-[#8A8880] hover:text-[#0E1116] border border-[#E5E5E0] hover:border-[#9B7853] bg-white transition-all duration-200 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider text-[#0E1116] font-bold hover:text-[#9B7853] border border-[#E5E5E0] hover:border-[#9B7853] bg-white transition-all duration-200 active:scale-95 cursor-pointer"
                         title="Copy email to clipboard"
                       >
                         {copiedEmail ? (
                           <>
                             <Check className="w-3 h-3 text-emerald-600" />
-                            <span className="text-emerald-700 font-semibold">Copied</span>
+                            <span className="text-emerald-700 font-bold">Copied</span>
                           </>
                         ) : (
                           <>
@@ -114,58 +114,58 @@ export const ContactSection: FC = () => {
                     </div>
                   </div>
 
-                  <div className="py-3 border-b border-[#E5E5E0]">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                  <div className="py-2.5 border-b border-[#E5E5E0]">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#9B7853] block mb-0.5 font-bold">
                       Direct Telephone
                     </span>
                     <a
                       href={`tel:${profile.phone.replace(/[^0-9]/g, '')}`}
-                      className="font-serif text-xl sm:text-2xl text-[#0E1116] hover:text-[#9B7853] transition-colors flex items-center gap-3"
+                      className="font-serif text-lg sm:text-xl text-[#0E1116] hover:text-[#9B7853] font-bold transition-colors flex items-center gap-2.5"
                     >
-                      <Phone className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                      <Phone className="w-4 h-4 text-[#9B7853] stroke-[2]" />
                       <span>{profile.phone}</span>
                     </a>
                   </div>
 
-                  <div className="py-3 border-b border-[#E5E5E0]">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#8A8880] block mb-1">
+                  <div className="py-2.5 border-b border-[#E5E5E0]">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#9B7853] block mb-0.5 font-bold">
                       Headquarters & Reach
                     </span>
-                    <div className="font-serif text-lg text-[#0E1116] flex items-center gap-3">
-                      <MapPin className="w-4 h-4 text-[#9B7853] stroke-[1.5]" />
+                    <div className="font-serif text-base text-[#0E1116] font-bold flex items-center gap-2.5">
+                      <MapPin className="w-4 h-4 text-[#9B7853] stroke-[2]" />
                       <span>{profile.location}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Official Social & Public Channels */}
-                <div className="pt-6 space-y-3">
-                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold block">
+                <div className="pt-4 space-y-2.5">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold block">
                     Public & Social Channels
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {socials.map((social) => (
                       <a
                         key={social.platform}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center justify-between p-3 border border-[#E5E5E0] bg-[#FBFBF9] hover:bg-white hover:border-[#9B7853] hover:shadow-xs transition-all duration-300"
+                        className="group flex items-center justify-between p-2.5 border border-[#E5E5E0] bg-[#FBFBF9] hover:bg-white hover:border-[#9B7853] hover:shadow-xs transition-all duration-300"
                       >
                         <div className="flex items-center gap-2.5 min-w-0">
                           <span className="text-[#9B7853] group-hover:scale-110 transition-transform shrink-0">
                             <SocialIcon platform={social.platform} className="w-4 h-4" />
                           </span>
                           <div className="min-w-0">
-                            <span className="font-serif text-sm font-medium text-[#0E1116] group-hover:text-[#9B7853] transition-colors block truncate">
+                            <span className="font-serif text-sm font-bold text-[#0E1116] group-hover:text-[#9B7853] transition-colors block truncate">
                               {social.platform}
                             </span>
-                            <span className="font-mono text-[10px] text-[#8A8880] block truncate">
+                            <span className="font-mono text-[10px] text-[#57595D] font-bold block truncate">
                               {social.handle}
                             </span>
                           </div>
                         </div>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-[#8A8880] group-hover:text-[#9B7853] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#57595D] group-hover:text-[#9B7853] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                       </a>
                     ))}
                   </div>
@@ -173,14 +173,14 @@ export const ContactSection: FC = () => {
               </div>
 
               {/* Advisory Focus Areas */}
-              <div className="space-y-4 pt-6">
-                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+              <div className="space-y-3 pt-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold">
                   Advisory Consultation Scopes
                 </h3>
-                <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-[#57595D]">
+                <ul className="space-y-2 font-sans text-xs sm:text-sm text-[#1A1D20] font-semibold">
                   {advisoryAreas.map((area, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 bg-[#9B7853]"></span>
+                    <li key={idx} className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 bg-[#9B7853] shrink-0"></span>
                       <span>{area}</span>
                     </li>
                   ))}
@@ -191,45 +191,45 @@ export const ContactSection: FC = () => {
 
           {/* Right Column: Executive Inquiry Form */}
           <div className="lg:col-span-7">
-            <ScrollReveal delay={200}>
-              <div className="border border-[#E5E5E0] p-8 sm:p-12 bg-[#FBFBF9] shadow-2xs hover:border-[#9B7853]/40 transition-colors duration-500">
+            <ScrollReveal delay={150}>
+              <div className="border border-[#E5E5E0] p-6 sm:p-8 bg-[#FBFBF9] shadow-2xs hover:border-[#9B7853]/40 transition-colors duration-500">
                 {submitted ? (
-              <div className="py-12 text-center space-y-6">
+              <div className="py-8 text-center space-y-5">
                 <div className="w-12 h-12 mx-auto border border-[#9B7853] flex items-center justify-center text-[#9B7853]">
                   <Check className="w-6 h-6 stroke-[2]" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-serif text-2xl sm:text-3xl text-[#0E1116]">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#0E1116] font-bold">
                     Inquiry Successfully Transmitted
                   </h3>
-                  <p className="font-sans text-sm text-[#57595D] max-w-md mx-auto leading-relaxed">
+                  <p className="font-sans text-sm text-[#1A1D20] font-semibold max-w-md mx-auto leading-relaxed">
                     Thank you for reaching out. Your communication has been routed directly to Judith Kerr&apos;s executive desk. Expect a formal response within 24–48 hours.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-medium text-[#0E1116] border border-[#0E1116] px-6 py-3 hover:bg-[#0E1116] hover:text-[#FBFBF9] transition-all"
+                  className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] font-bold text-[#0E1116] border border-[#0E1116] px-5 py-2.5 hover:bg-[#0E1116] hover:text-[#FBFBF9] transition-all"
                 >
                   <span>Submit Another Inquiry</span>
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="border-b border-[#E5E5E0] pb-4">
-                  <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <div className="border-b border-[#E5E5E0] pb-3">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold">
                     Executive Communication Form
                   </h3>
-                  <p className="font-sans text-xs text-[#8A8880] mt-1">
+                  <p className="font-sans text-xs text-[#57595D] font-bold mt-1">
                     All correspondence is held in strict professional confidence.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
                     <label
                       htmlFor="form-name"
-                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                     >
                       Full Name *
                     </label>
@@ -240,14 +240,14 @@ export const ContactSection: FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Dr. Eleanor Vance"
-                      className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors"
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <label
                       htmlFor="form-org"
-                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                     >
                       Organization / Entity
                     </label>
@@ -257,16 +257,16 @@ export const ContactSection: FC = () => {
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       placeholder="e.g. Global Health Foundation"
-                      className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
                     <label
                       htmlFor="form-email"
-                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                     >
                       Official Email *
                     </label>
@@ -277,14 +277,14 @@ export const ContactSection: FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="name@organization.org"
-                      className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors"
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <label
                       htmlFor="form-phone"
-                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                      className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                     >
                       Telephone (Optional)
                     </label>
@@ -294,15 +294,15 @@ export const ContactSection: FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+1 (416) 000-0000"
-                      className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <label
                     htmlFor="form-type"
-                    className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                    className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                   >
                     Inquiry Engagement Scope
                   </label>
@@ -310,7 +310,7 @@ export const ContactSection: FC = () => {
                     id="form-type"
                     value={formData.inquiryType}
                     onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
-                    className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors"
                   >
                     <option value="Executive Advisory & Governance">Executive Advisory & Organizational Governance</option>
                     <option value="Keynote Speaking / Panel Address">Keynote Speaking & Panel Leadership</option>
@@ -321,10 +321,10 @@ export const ContactSection: FC = () => {
                   </select>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <label
                     htmlFor="form-message"
-                    className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116]"
+                    className="block font-mono text-[11px] uppercase tracking-wider text-[#0E1116] font-bold"
                   >
                     Statement of Intent / Inquiry *
                   </label>
@@ -335,14 +335,14 @@ export const ContactSection: FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Please outline the nature of your proposed initiative, timeline, and institutional context..."
-                    className="w-full px-4 py-3 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] focus:border-[#0E1116] focus:outline-none transition-colors resize-none"
+                    className="w-full px-3.5 py-2.5 bg-white border border-[#E5E5E0] text-sm text-[#0E1116] font-semibold focus:border-[#0E1116] focus:outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0E1116] text-[#FBFBF9] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#9B7853] transition-colors disabled:opacity-50 focus:outline-none cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#0E1116] text-[#FBFBF9] text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#9B7853] transition-colors disabled:opacity-50 focus:outline-none cursor-pointer"
                 >
                   {submitting ? (
                     <span>Transmitting Correspondence...</span>

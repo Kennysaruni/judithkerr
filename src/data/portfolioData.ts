@@ -53,6 +53,16 @@ export interface SocialLink {
   category: string;
 }
 
+export interface LeadershipProfileData {
+  title: string;
+  personalityProfile: string[];
+  experienceSummary: string[];
+  thesisTitle: string;
+  thesisDescription: string;
+  areasOfExperience: string[];
+  mission: string;
+}
+
 export const portfolioData = {
   profile: {
     name: "Judith Kerr",
@@ -63,8 +73,40 @@ export const portfolioData = {
     email: "judith.kerr@alumni.utoronto.ca",
     phone: "(416) 918-3177",
     location: "Toronto, Ontario, Canada & International",
-    bioLong: "Judith Kerr is a recognized humanitarian leader, executive director, and strategist with over two decades of transformative experience spanning public health, high-acuity crisis mediation, emergency shelter governance, and global non-governmental development. Through strategic cross-sector partnerships with municipal agencies, faith networks, and international NGOs, she champions sustainable social enterprise models that move communities from vulnerability to enduring economic and social independence.",
+    bioLong: "Judith E. Kerr is a resilient, compassionate, purpose-driven, and reflective leader with a strong commitment to helping individuals and communities move from adversity toward healing, restoration, empowerment, and purposeful transformation. Her leadership reflects strong competencies in communication, advocacy, counselling, teaching, mentoring, research, and community development. Her professional approach integrates Christian faith, psychology, counselling, education, trauma-informed care, and lived experience, providing a holistic perspective that recognizes the interconnectedness of the mind, body, spirit, and soul.",
   },
+
+  leadershipProfile: {
+    title: "Professional Personality and Leadership Profile",
+    personalityProfile: [
+      "Judith E. Kerr is a resilient, compassionate, purpose-driven, and reflective leader with a strong commitment to helping individuals and communities move from adversity toward healing, restoration, empowerment, and purposeful transformation.",
+      "Her leadership reflects strong competencies in communication, advocacy, counselling, teaching, mentoring, research, and community development. Her professional approach integrates Christian faith, psychology, counselling, education, trauma-informed care, and lived experience, providing a holistic perspective that recognizes the interconnectedness of the mind, body, spirit, and soul.",
+      "Kerr demonstrates intellectual curiosity and a commitment to lifelong learning through ongoing academic development, research, writing, teaching, and the creation of educational and ministry resources. Her work is characterized by compassion, integrity, perseverance, relational engagement, and a commitment to empowering others to understand their experiences, reclaim their identity, develop resilience, and pursue meaningful and purposeful lives."
+    ],
+    experienceSummary: [
+      "Judith E. Kerr brings a multidisciplinary background encompassing Christian counselling, ministry leadership, education, research, advocacy, women's empowerment, mentoring, and community development.",
+      "As Founder and Executive Director of Judith Kerr Ministries International (JKMI) and Women FE Woman Ministry, Kerr has provided leadership in the development and delivery of educational programs, workshops, seminars, conferences, teaching initiatives, prayer and family programs, and community outreach activities.",
+      "Her professional work addresses a broad range of issues, including trauma and its long-term effects, emotional healing, personal development, women's empowerment, relationships, family life, spiritual development, resilience, identity, and transformational growth."
+    ],
+    thesisTitle: "The Long-Term Effects of Childhood Sexual Abuse: Christian Counselling Implications",
+    thesisDescription: "Her academic research has contributed to her understanding of trauma and its psychological, relational, and spiritual implications. Her master's thesis reflects her interest in integrating psychological understanding with Christian counselling and spiritual care. Additional research interests include Adverse Childhood Experiences (ACEs), religion and spirituality, trauma, and whole-person healing.",
+    areasOfExperience: [
+      "Christian counselling and spiritual care",
+      "Trauma-informed education and support",
+      "Counselling and psychosocial development",
+      "Women's empowerment and leadership development",
+      "Teaching, facilitation, and public speaking",
+      "Research and academic writing",
+      "Mentoring and personal development",
+      "Community outreach and advocacy",
+      "Ministry and organizational leadership",
+      "Family and relationship education",
+      "Program and event development",
+      "Fundraising and charitable initiatives",
+      "Development of devotional, educational, and ministry resources"
+    ],
+    mission: "The overarching focus of Kerr's professional and ministry work is the integration of faith, psychological understanding, education, and whole-person development to equip individuals, families, leaders, churches, and communities to think biblically, live victoriously, and contribute meaningfully to the transformation of their communities."
+  } as LeadershipProfileData,
 
   impactMetrics: [
     {

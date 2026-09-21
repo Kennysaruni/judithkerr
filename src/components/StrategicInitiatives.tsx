@@ -55,21 +55,21 @@ export const StrategicInitiatives: FC = () => {
   };
 
   return (
-    <section id="initiatives" className="border-b border-[#E5E5E0] bg-[#FBFBF9] py-20 sm:py-28">
+    <section id="initiatives" className="border-b border-[#E5E5E0] bg-[#FBFBF9] py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-14 border-b border-[#E5E5E0]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-6 border-b border-[#E5E5E0]">
             <div className="lg:col-span-5 space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block font-medium">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block font-bold">
                 Strategic Engines & Platforms
               </span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-[#0E1116] font-normal tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0E1116] font-bold tracking-tight">
                 Pioneering Global & Community Initiatives
               </h2>
             </div>
             <div className="lg:col-span-7 flex items-end">
-              <p className="font-sans text-base text-[#57595D] leading-relaxed max-w-xl">
+              <p className="font-sans text-xs sm:text-sm text-[#1A1D20] font-semibold leading-relaxed max-w-xl">
                 Founding and scaling independent organizations that unify grassroots advocacy, systemic social enterprise, and pastoral leadership to create permanent infrastructure for equity.
               </p>
             </div>
@@ -88,38 +88,38 @@ export const StrategicInitiatives: FC = () => {
                   ref={(el) => {
                     initiativeRefs.current[item.number] = el;
                   }}
-                  className={`py-10 transition-colors duration-300 ${
+                  className={`py-6 sm:py-8 transition-colors duration-300 ${
                     isOpen ? 'bg-[#F6F2EC]/20' : 'hover:bg-[#F6F2EC]/10'
                   }`}
                 >
                   {/* Header Row */}
                   <div
                     onClick={() => toggleInitiative(item.number)}
-                    className="cursor-pointer group flex flex-col md:flex-row md:items-baseline justify-between gap-6"
+                    className="cursor-pointer group flex flex-col md:flex-row md:items-baseline justify-between gap-4"
                   >
-                    <div className="flex items-baseline gap-6 sm:gap-10">
-                      <span className="font-mono text-sm sm:text-base font-medium text-[#9B7853] tracking-widest transition-transform duration-300 group-hover:scale-110">
+                    <div className="flex items-baseline gap-4 sm:gap-8">
+                      <span className="font-mono text-sm sm:text-base font-bold text-[#9B7853] tracking-widest transition-transform duration-300 group-hover:scale-110">
                         {item.number}
                       </span>
                       <div className="space-y-1">
                         <div className="flex items-center gap-3">
-                          <h3 className="font-serif text-2xl sm:text-3xl text-[#0E1116] group-hover:text-[#9B7853] transition-colors">
+                          <h3 className="font-serif text-2xl sm:text-3xl text-[#0E1116] font-bold group-hover:text-[#9B7853] transition-colors">
                             {item.title}
                           </h3>
                           <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 hidden sm:inline-block">
                             {getInitiativeIcon(item.number)}
                           </span>
                         </div>
-                        <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#8A8880]">
-                          <span className="text-[#0E1116] font-medium">{item.role}</span>
+                        <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#8A8880] font-bold">
+                          <span className="text-[#0E1116] font-bold">{item.role}</span>
                           <span>—</span>
                           <span>{item.focus}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4 self-start md:self-auto pl-12 md:pl-0">
-                      <span className="font-mono text-xs uppercase tracking-widest text-[#8A8880] hidden sm:inline-block">
+                    <div className="flex items-center gap-4 self-start md:self-auto pl-8 md:pl-0">
+                      <span className="font-mono text-xs uppercase tracking-widest text-[#8A8880] font-bold hidden sm:inline-block">
                         {isOpen ? 'Close Blueprint' : 'Expand Blueprint'}
                       </span>
                       <button
@@ -128,9 +128,9 @@ export const StrategicInitiatives: FC = () => {
                         aria-label={isOpen ? 'Collapse initiative details' : 'Expand initiative details'}
                       >
                         {isOpen ? (
-                          <Minus className="w-5 h-5 stroke-[1.5]" />
+                          <Minus className="w-5 h-5 stroke-[2]" />
                         ) : (
-                          <Plus className="w-5 h-5 stroke-[1.5]" />
+                          <Plus className="w-5 h-5 stroke-[2]" />
                         )}
                       </button>
                     </div>
@@ -138,16 +138,16 @@ export const StrategicInitiatives: FC = () => {
 
                   {/* Expanded Detail Panel with smooth opacity & slide */}
                   {isOpen && (
-                    <div className="mt-8 pt-8 border-t border-[#E5E5E0]/60 grid grid-cols-1 lg:grid-cols-12 gap-8 pl-0 md:pl-16 transition-all duration-500 animate-in fade-in slide-in-from-top-3">
+                    <div className="mt-6 pt-6 border-t border-[#E5E5E0]/60 grid grid-cols-1 lg:grid-cols-12 gap-6 pl-0 md:pl-12 transition-all duration-500 animate-in fade-in slide-in-from-top-3">
                       {currentImg ? (
                           <>
                             {/* Left Column: Narrative, Pillars & Realized Impact */}
-                            <div className="lg:col-span-7 space-y-6">
-                              <div className="space-y-3">
-                                <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+                            <div className="lg:col-span-7 space-y-4">
+                              <div className="space-y-2">
+                                <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold">
                                   Strategic Mandate & Purpose
                                 </h4>
-                                <div className="space-y-3 font-sans text-sm text-[#33373D] leading-relaxed">
+                                <div className="space-y-2.5 font-sans text-xs sm:text-sm text-[#1A1D20] font-semibold leading-relaxed">
                                   {item.description.split('\n\n').map((para, pIdx) => (
                                     <p key={pIdx}>{para}</p>
                                   ))}

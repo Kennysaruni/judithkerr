@@ -12,20 +12,20 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
   const { profile, socials } = portfolioData;
 
   return (
-    <section id="overview" className="relative pt-12 pb-20 sm:pt-16 sm:pb-28 border-b border-[#E5E5E0]">
+    <section id="overview" className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 border-b border-[#E5E5E0]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Main Editorial Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pt-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pt-3 items-start">
           {/* Left Column: Post-nominals, Name & Core Statement */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-5">
             <ScrollReveal delay={50}>
-              <div className="space-y-3">
-                <div className="font-mono text-xs uppercase tracking-[0.22em] text-[#9B7853] font-medium">
+              <div className="space-y-2">
+                <div className="font-mono text-xs uppercase tracking-[0.22em] text-[#9B7853] font-bold">
                   {profile.title}
                 </div>
-                <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-[#0E1116] tracking-tight leading-[1.08]">
+                <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-[#0E1116] tracking-tight leading-[1.08]">
                   Judith Kerr
-                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-medium text-[#2D3139] mt-2 font-serif italic">
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A1D20] mt-1 font-serif italic">
                     {profile.postNominals}
                   </span>
                 </h1>
@@ -34,24 +34,24 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
 
             {/* Core Hero Statement */}
             <ScrollReveal delay={150}>
-              <p className="font-serif text-2xl sm:text-3xl text-[#0E1116] font-medium leading-relaxed text-balance max-w-2xl pt-2">
+              <p className="font-serif text-2xl sm:text-3xl text-[#0E1116] font-bold leading-relaxed text-balance max-w-2xl pt-1">
                 &ldquo;{profile.heroStatement}&rdquo;
               </p>
             </ScrollReveal>
 
             {/* Secondary Narrative Statement */}
             <ScrollReveal delay={200}>
-              <p className="font-sans text-base sm:text-lg text-[#202329] leading-relaxed max-w-2xl font-medium">
+              <p className="font-sans text-base sm:text-lg text-[#1A1D20] leading-relaxed max-w-2xl font-bold">
                 {profile.subStatement}
               </p>
             </ScrollReveal>
 
             {/* Call to Actions */}
             <ScrollReveal delay={250}>
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
                 <a
                   href="#inquiries"
-                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0E1116] text-[#FBFBF9] text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#9B7853] transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] focus:outline-none overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#0E1116] text-[#FBFBF9] text-xs uppercase tracking-[0.18em] font-bold hover:bg-[#9B7853] transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.99] focus:outline-none overflow-hidden"
                 >
                   <span className="relative z-10">Initiate Partnership</span>
                   <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1.5 transition-transform duration-300" />
@@ -60,34 +60,34 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
                 <button
                   type="button"
                   onClick={onOpenCVModal}
-                  className="group inline-flex items-center justify-center gap-2.5 px-6 py-4 bg-transparent border border-[#0E1116]/40 text-[#0E1116] text-xs uppercase tracking-[0.18em] font-medium hover:border-[#0E1116] hover:bg-[#0E1116]/5 transition-all duration-300 active:scale-[0.99] focus:outline-none"
+                  className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-transparent border border-[#0E1116] text-[#0E1116] text-xs uppercase tracking-[0.18em] font-bold hover:border-[#0E1116] hover:bg-[#0E1116]/5 transition-all duration-300 active:scale-[0.99] focus:outline-none"
                 >
-                  <Download className="w-4 h-4 text-[#9B7853] stroke-[1.75] group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  <Download className="w-4 h-4 text-[#9B7853] stroke-[2] group-hover:-translate-y-0.5 transition-transform duration-300" />
                   <span>Download Executive CV</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                 </button>
               </div>
 
               {/* Quick Strategic Credentials Strip */}
-              <div className="pt-6 mt-6 border-t border-[#E5E5E0] grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+              <div className="pt-4 mt-4 border-t border-[#E5E5E0] grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
                 <div className="space-y-1 p-2 rounded-xs hover:bg-[#F6F2EC]/40 transition-colors">
-                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block">Leadership Role</span>
-                  <span className="text-[#0E1116] font-semibold block">Founder & Exec. Director</span>
+                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block font-bold">Leadership Role</span>
+                  <span className="text-[#0E1116] font-bold block">Founder & Exec. Director</span>
                 </div>
                 <div className="space-y-1 p-2 rounded-xs hover:bg-[#F6F2EC]/40 transition-colors">
-                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block">Specialization</span>
-                  <span className="text-[#0E1116] font-semibold block">Systemic Social Equity</span>
+                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block font-bold">Specialization</span>
+                  <span className="text-[#0E1116] font-bold block">Systemic Social Equity</span>
                 </div>
                 <div className="space-y-1 p-2 rounded-xs hover:bg-[#F6F2EC]/40 transition-colors">
-                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block">Credentials</span>
-                  <span className="text-[#0E1116] font-semibold block">M.C.C., Dr-C., BASc</span>
+                  <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block font-bold">Credentials</span>
+                  <span className="text-[#0E1116] font-bold block">M.C.C., Dr-C., BASc</span>
                 </div>
               </div>
             </ScrollReveal>
           </div>
 
           {/* Right Column: Editorial Portrait & Executive Summary */}
-          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#E5E5E0] pt-8 lg:pt-0 lg:pl-10 space-y-8">
+          <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#E5E5E0] pt-6 lg:pt-0 lg:pl-8 space-y-6">
             {/* Editorial Portrait Frame with subtle shimmer and live status pulse */}
             <ScrollReveal delay={200} direction="left">
               <div className="relative group shimmer-hover">
@@ -102,11 +102,11 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
                   </div>
 
                   {/* Caption beneath portrait */}
-                  <div className="pt-3 text-xs space-y-0.5">
-                    <span className="font-serif text-sm font-medium text-[#0E1116] block">
+                  <div className="pt-2.5 text-xs space-y-0.5">
+                    <span className="font-serif text-sm font-bold text-[#0E1116] block">
                       Judith Kerr
                     </span>
-                    <span className="font-mono text-[11px] text-[#9B7853] block">
+                    <span className="font-mono text-[11px] text-[#9B7853] font-bold block">
                       Toronto / Global Outreach
                     </span>
                   </div>
@@ -116,23 +116,23 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
 
             {/* Executive Profile Summary */}
             <ScrollReveal delay={300}>
-              <div className="space-y-3">
-                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-semibold">
+              <div className="space-y-2.5 bg-[#F5F5F0]/50 p-4 border border-[#E5E5E0]">
+                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-[#0E1116] font-bold">
                   Executive Profile Summary
                 </h2>
-                <p className="font-sans text-sm text-[#202329] font-medium leading-relaxed">
+                <p className="font-arial text-xs sm:text-sm text-[#0E1116] font-bold leading-relaxed">
                   {profile.bioLong}
                 </p>
               </div>
 
               {/* Core Pillars List */}
-              <div className="border-t border-[#E5E5E0] pt-6 space-y-4">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8A8880] block font-medium">
+              <div className="border-t border-[#E5E5E0] pt-4 space-y-3">
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8A8880] block font-bold">
                   Direct Engagements
                 </span>
-                <ul className="space-y-3 font-sans text-xs text-[#0E1116]">
+                <ul className="space-y-2.5 font-sans text-xs text-[#0E1116]">
                   <li className="flex items-baseline justify-between py-1 border-b border-[#E5E5E0]/60 hover:border-[#9B7853]/40 transition-colors">
-                    <span className="font-semibold">Direct Email</span>
+                    <span className="font-bold">Direct Email</span>
                     <a
                       href={`mailto:${profile.email}`}
                       className="font-mono text-[#33373D] font-medium hover:text-[#9B7853] transition-colors"

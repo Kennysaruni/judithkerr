@@ -131,10 +131,10 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
 
             {/* Executive Profile Summary */}
             <div className="cv-section space-y-2">
-              <h2 className="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-[#0E1116] font-semibold border-b border-[#E5E5E0] pb-1.5 print-mono-xs">
+              <h2 className="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-[#0E1116] font-bold border-b border-[#E5E5E0] pb-1.5 print-mono-xs">
                 Executive Profile & Leadership Scope
               </h2>
-              <p className="font-sans text-sm sm:text-base text-[#57595D] leading-relaxed print-compact-text">
+              <p className="font-arial text-xs sm:text-sm text-[#0E1116] font-bold leading-relaxed print-compact-text">
                 {profile.bioLong}
               </p>
             </div>

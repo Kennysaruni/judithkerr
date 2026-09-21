@@ -27,6 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
 
   const navLinks = [
     { label: 'Overview', href: '#overview' },
+    { label: 'Profile', href: '#profile' },
     { label: 'Impact', href: '#impact' },
     { label: 'Initiatives', href: '#initiatives' },
     { label: 'Leadership', href: '#leadership' },
@@ -44,8 +45,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
             : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60'
         }`}
         style={{
-          paddingTop: 'max(14px, env(safe-area-inset-top, 14px))',
-          paddingBottom: '14px',
+          paddingTop: 'max(12px, env(safe-area-inset-top, 12px))',
+          paddingBottom: '12px',
         }}
       >
         {/* Dynamic Reading Scroll Progress Bar */}
@@ -56,21 +57,21 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand / Monogram */}
         <a href="#overview" className="group flex flex-col focus:outline-none">
-          <span className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-[#0E1116] group-hover:text-[#9B7853] transition-colors">
+          <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#0E1116] group-hover:text-[#9B7853] transition-colors">
             Judith Kerr
           </span>
-          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8A8880] mt-0.5">
+          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8A8880] mt-0.5 font-bold">
             Executive Portfolio
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8" aria-label="Main Navigation">
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8" aria-label="Main Navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="editorial-link font-sans text-xs uppercase tracking-[0.18em] text-[#57595D] hover:text-[#0E1116] transition-colors py-1"
+              className="editorial-link font-sans text-xs uppercase tracking-[0.18em] text-[#0E1116] font-bold hover:text-[#9B7853] transition-colors py-1"
             >
               {link.label}
             </a>

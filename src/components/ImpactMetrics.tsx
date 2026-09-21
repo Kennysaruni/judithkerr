@@ -8,19 +8,19 @@ export const ImpactMetrics: FC = () => {
 
   return (
     <section id="impact" className="border-b border-[#E5E5E0] bg-[#FBFBF9]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10 sm:py-14">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-10 border-b border-[#E5E5E0] gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 border-b border-[#E5E5E0] gap-4">
             <div>
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block mb-2 font-medium">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#9B7853] block mb-1.5 font-bold">
                 Scale & Track Record
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#0E1116] font-normal tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0E1116] font-bold tracking-tight">
                 Measurable Executive Impact
               </h2>
             </div>
-            <p className="font-sans text-sm text-[#57595D] max-w-md">
+            <p className="font-sans text-xs sm:text-sm text-[#1A1D20] font-semibold max-w-md">
               Delivering structural resilience across municipal crisis centres, transitional housing networks, and grassroots international programs.
             </p>
           </div>
@@ -31,28 +31,28 @@ export const ImpactMetrics: FC = () => {
           {impactMetrics.map((item, index) => (
             <ScrollReveal key={index} delay={index * 120} className="h-full">
               <div
-                className={`py-8 sm:py-10 ${
+                className={`py-6 sm:py-8 ${
                   index === 0
-                    ? 'md:pr-8'
+                    ? 'md:pr-6'
                     : index === 3
-                    ? 'md:pl-8'
-                    : 'md:px-8'
-                } flex flex-col justify-between space-y-4 h-full transition-all duration-300 hover:bg-[#F6F2EC]/40 group`}
+                    ? 'md:pl-6'
+                    : 'md:px-6'
+                } flex flex-col justify-between space-y-3 h-full transition-all duration-300 hover:bg-[#F6F2EC]/40 group`}
               >
                 <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-4xl sm:text-5xl lg:text-5xl text-[#0E1116] font-light tracking-tight group-hover:text-[#9B7853] transition-colors duration-300">
+                  <span className="font-serif text-4xl sm:text-5xl lg:text-5xl text-[#0E1116] font-bold tracking-tight group-hover:text-[#9B7853] transition-colors duration-300">
                     <AnimatedCounter value={item.metric} duration={1600 + index * 200} />
                   </span>
-                  <span className="font-mono text-xs text-[#8A8880] tracking-widest uppercase group-hover:text-[#0E1116] transition-colors">
+                  <span className="font-mono text-xs text-[#8A8880] tracking-widest uppercase group-hover:text-[#0E1116] transition-colors font-bold">
                     0{index + 1}
                   </span>
                 </div>
 
-                <div className="space-y-2 pt-2">
-                  <h3 className="font-sans text-sm font-semibold text-[#0E1116] tracking-wide uppercase">
+                <div className="space-y-1.5 pt-1">
+                  <h3 className="font-sans text-sm font-bold text-[#0E1116] tracking-wide uppercase">
                     {item.label}
                   </h3>
-                  <p className="font-sans text-xs text-[#57595D] leading-relaxed">
+                  <p className="font-sans text-xs text-[#1A1D20] font-semibold leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -63,18 +63,18 @@ export const ImpactMetrics: FC = () => {
 
         {/* Global Focus Strip (Kenya, Uganda, Nigeria, India, Jamaica) */}
         <ScrollReveal delay={250}>
-          <div className="pt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="pt-6 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
             <div className="lg:col-span-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8A8880] font-medium">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8A8880] font-bold">
                 International Focus
               </span>
             </div>
-            <div className="lg:col-span-9 flex flex-wrap items-center gap-x-8 gap-y-3 font-serif text-base sm:text-lg text-[#0E1116]">
+            <div className="lg:col-span-9 flex flex-wrap items-center gap-x-8 gap-y-2 font-serif text-base sm:text-lg text-[#0E1116] font-bold">
               {['Kenya', 'Uganda', 'Nigeria', 'India', 'Jamaica'].map((country, idx, arr) => (
                 <div key={country} className="flex items-center gap-x-8">
                   <span className="group flex items-center gap-2 cursor-default transition-transform duration-200 hover:-translate-y-0.5">
                     <span className="w-1.5 h-1.5 bg-[#9B7853] transition-all duration-300 group-hover:scale-150 group-hover:bg-[#826241]"></span>
-                    <span className="group-hover:text-[#9B7853] transition-colors">{country}</span>
+                    <span className="group-hover:text-[#9B7853] transition-colors font-bold">{country}</span>
                   </span>
                   {idx < arr.length - 1 && <span className="text-[#D4D4CD]">/</span>}
                 </div>
@@ -85,7 +85,7 @@ export const ImpactMetrics: FC = () => {
 
         {/* International Field Missions Documentary Gallery */}
         <ScrollReveal delay={350}>
-          <div className="mt-10 pt-8 border-t border-[#E5E5E0] grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-8 pt-6 border-t border-[#E5E5E0] grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Mission Card 1: Uganda */}
             <div className="bg-[#F5F5F0] border border-[#E5E5E0] p-3 shadow-xs hover:border-[#9B7853]/40 transition-colors duration-500 shimmer-hover group">
               <div className="relative aspect-[16/10] overflow-hidden bg-[#0E1116]">
