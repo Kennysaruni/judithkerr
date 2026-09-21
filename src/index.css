@@ -55,6 +55,10 @@
     background-color: rgba(155, 120, 83, 0.2);
     color: #0E1116;
   }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 /* Ensure all normal secondary text across components has a bolder presence and crisp contrast */

@@ -36,18 +36,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-40 w-full pt-[env(safe-area-inset-top,0px)] transition-[background-color,border-color,box-shadow,padding] duration-200 ${
-        isScrolled
-          ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] py-3 sm:py-3.5 shadow-2xs'
-          : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60 py-3 sm:py-5'
-      }`}
-    >
-      {/* Dynamic Reading Scroll Progress Bar */}
-      <div
-        className="absolute bottom-0 left-0 h-[2px] bg-[#9B7853] transition-all duration-100 ease-out pointer-events-none"
-        style={{ width: `${scrollProgress}%` }}
-      />
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 w-full transition-[background-color,border-color,box-shadow] duration-200 ${
+          isScrolled
+            ? 'bg-[#FBFBF9]/95 backdrop-blur-md border-b border-[#E5E5E0] shadow-2xs'
+            : 'bg-[#FBFBF9] border-b border-[#E5E5E0]/60'
+        }`}
+        style={{
+          paddingTop: 'max(14px, env(safe-area-inset-top, 14px))',
+          paddingBottom: '14px',
+        }}
+      >
+        {/* Dynamic Reading Scroll Progress Bar */}
+        <div
+          className="absolute bottom-0 left-0 h-[2px] bg-[#9B7853] transition-all duration-100 ease-out pointer-events-none"
+          style={{ width: `${scrollProgress}%` }}
+        />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand / Monogram */}
         <a href="#overview" className="group flex flex-col focus:outline-none">
@@ -174,5 +179,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCVModal }) => {
         </div>
       )}
     </header>
+
+      {/* Header Placeholder Spacer to preserve document layout flow */}
+      <div
+        className="w-full shrink-0"
+        style={{
+          height: 'calc(max(14px, env(safe-area-inset-top, 14px)) + 14px + 45px)',
+        }}
+        aria-hidden="true"
+      />
+    </>
   );
 };
