@@ -66,7 +66,7 @@ export interface LeadershipProfileData {
 export const portfolioData = {
   profile: {
     name: "Judith Kerr",
-    postNominals: "BASc, M.C.C., Dr-C.",
+    postNominals: "BA, M.C.C., PHD-S",
     title: "Global Humanitarian Executive, NGO Founder & Social Impact Strategist",
     heroStatement: "Advancing systemic equity, sustainable social enterprise, and community restoration across Canada and globally.",
     subStatement: "Synthesizing 25+ years of institutional governance, frontline crisis stabilization, and international grassroots development to build self-sustaining community ecosystems.",
@@ -306,7 +306,7 @@ export const portfolioData = {
 
   educationAndHonors: [
     {
-      degreeOrTitle: "Doctoral Candidate (Dr-C.)",
+      degreeOrTitle: "Doctoral Candidate (PHD-S)",
       institution: "School of Graduate Studies",
       yearOrStatus: "In Progress",
       type: "academic",
@@ -320,7 +320,7 @@ export const portfolioData = {
       note: "Specialization in family systems, high-trauma restoration, and cross-cultural mediation."
     },
     {
-      degreeOrTitle: "Bachelor of Arts (BASc)",
+      degreeOrTitle: "Bachelor of Arts (BA)",
       institution: "University of Toronto",
       yearOrStatus: "Conferred",
       type: "academic",

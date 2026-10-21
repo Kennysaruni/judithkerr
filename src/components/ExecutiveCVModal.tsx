@@ -192,7 +192,7 @@ export const ExecutiveCVModal: FC<ExecutiveCVModalProps> = ({ isOpen, onClose })
 
             {/* Page 1 Bottom Classification */}
             <div className="pt-2 border-t border-[#E5E5E0] flex items-center justify-between font-mono text-xs text-[#8A8880] print-mono-xs">
-              <span>Judith Kerr, BASc, M.C.C., Dr-C.</span>
+              <span>Judith Kerr, BA, M.C.C., PHD-S</span>
               <span className="text-[#9B7853] font-semibold">Page 01 of 02</span>
             </div>
           </div>

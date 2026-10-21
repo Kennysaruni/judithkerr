@@ -80,7 +80,7 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
                 </div>
                 <div className="space-y-1 p-2 rounded-xs hover:bg-[#F6F2EC]/40 transition-colors">
                   <span className="text-[#8A8880] text-[10px] uppercase tracking-wider block font-bold">Credentials</span>
-                  <span className="text-[#0E1116] font-bold block">M.C.C., Dr-C., BASc</span>
+                  <span className="text-[#0E1116] font-bold block">M.C.C., PHD-S, BA</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -95,7 +95,7 @@ export const Hero: FC<HeroProps> = ({ onOpenCVModal }) => {
                   <div className="relative aspect-[4/5] overflow-hidden bg-[#EAEAE5]">
                     <img
                       src="/IMG-20260917-WA0022.jpg"
-                      alt="Judith Kerr, BASc, M.C.C., Dr-C. — Executive Portrait"
+                      alt="Judith Kerr, BA, M.C.C., PHD-S — Executive Portrait"
                       className="w-full h-full object-cover object-[center_26%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                       loading="eager"
                     />
